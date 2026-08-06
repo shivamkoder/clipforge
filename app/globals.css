@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 6% 6%;
+    --foreground: 40 20% 95%;
+    --card: 30 6% 9%;
+    --card-foreground: 40 20% 95%;
+    --popover: 30 6% 9%;
+    --popover-foreground: 40 20% 95%;
+    --primary: 38 92% 58%;
+    --primary-foreground: 30 10% 8%;
+    --secondary: 30 6% 14%;
+    --secondary-foreground: 40 20% 95%;
+    --muted: 30 6% 14%;
+    --muted-foreground: 38 10% 60%;
+    --accent: 38 60% 50%;
+    --accent-foreground: 30 10% 8%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 40 20% 95%;
+    --border: 30 6% 18%;
+    --input: 30 6% 18%;
+    --ring: 38 92% 58%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv01";
+  }
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .animate-fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .animate-fade-in {
+    animation: fadeIn 1.2s ease-out both;
+  }
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+  .animate-glow {
+    animation: glow 4s ease-in-out infinite alternate;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes glow {
+  from {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
